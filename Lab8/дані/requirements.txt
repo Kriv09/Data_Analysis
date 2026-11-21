@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+scipy
+networkx
+pyarrow
+shapely
+folium
+xyzservices
+jupyter

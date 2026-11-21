@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a30919659ae08605f7e79b55a23f0e2a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style="position:fixed;bottom:48px;left:10px;max-width:60%;z-index:9999;background:#fff;padding:6px 10px;border-radius:4px;font:13px sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.3)">ЛР8 · Кривичко Назар · Львів, Україна · найкращий 49.17 км проти 51.74 км у ЛР5 · ПРЯМІ ВІДРІЗКИ, не вулиці</div>
+    
+            <div class="folium-map" id="map_a30919659ae08605f7e79b55a23f0e2a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a30919659ae08605f7e79b55a23f0e2a = L.map(
+                "map_a30919659ae08605f7e79b55a23f0e2a",
+                {
+                    center: [49.838539370967744, 24.035211966645488],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+
+            
+
+        
+    
+            var tile_layer_d16170cc9e9aaf09cd6a99b48c53944c = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 16,
+  "maxNativeZoom": 16,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d16170cc9e9aaf09cd6a99b48c53944c.addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var feature_group_6e05a6f70889cc09804a3c6f9daade06 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_e2cbbb396881cfd9b8c674da7213779b = L.polyline(
+                [[49.8397377, 23.994340389962883], [49.835919950000005, 24.021908396727962], [49.837153, 24.025350046933703], [49.838003900000004, 24.027711249999996], [49.83795295, 24.026929415935534], [49.8225208, 24.030954158705846], [49.82233395, 24.031679396967412], [49.78922915, 24.072384746360203], [49.8287834, 24.035125450000002], [49.8331532, 24.028292786034115], [49.8396341, 24.03707082750715], [49.843245499999995, 24.063349559601306], [49.843340749999996, 24.065755000000003], [49.84423155, 24.064371299999998], [49.84360890000001, 24.062971773801657], [49.84415465, 24.0680248], [49.84397225, 24.067497646563503], [49.8750745, 24.044984883042396], [49.84300705, 24.033800570347463], [49.84324135, 24.033772770986516], [49.842262500000004, 24.03272854808707], [49.84224785, 24.03457864110444], [49.84184755, 24.033404965918546], [49.84289855, 24.03567831761407], [49.84304055, 24.03454480829924], [49.8412623, 24.035276132972733], [49.843126, 24.027942448896574], [49.8425792, 24.029531841713514], [49.8413948, 24.030729371654616], [49.8412541, 24.021387417418772], [49.8245085, 23.939493302852853], [49.8397377, 23.994340389962883]],
+                {"bubblingMouseEvents": true, "color": "#6b6b6b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#6b6b6b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 6}
+            ).addTo(feature_group_6e05a6f70889cc09804a3c6f9daade06);
+        
+    
+            poly_line_e2cbbb396881cfd9b8c674da7213779b.bindTooltip(
+                `<div>
+                     ЛР5: 2-opt — 51.74 км
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_6e05a6f70889cc09804a3c6f9daade06.addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var feature_group_623ba352a4b9ecc3e8a0c740c13e2e47 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_c6c4deef8a5078457ea7bc33769293d7 = L.polyline(
+                [[49.8397377, 23.994340389962883], [49.835919950000005, 24.021908396727962], [49.837153, 24.025350046933703], [49.838003900000004, 24.027711249999996], [49.83795295, 24.026929415935534], [49.8331532, 24.028292786034115], [49.8287834, 24.035125450000002], [49.8225208, 24.030954158705846], [49.82233395, 24.031679396967412], [49.78922915, 24.072384746360203], [49.84360890000001, 24.062971773801657], [49.843245499999995, 24.063349559601306], [49.843340749999996, 24.065755000000003], [49.84423155, 24.064371299999998], [49.84415465, 24.0680248], [49.84397225, 24.067497646563503], [49.8750745, 24.044984883042396], [49.84324135, 24.033772770986516], [49.84300705, 24.033800570347463], [49.84224785, 24.03457864110444], [49.842262500000004, 24.03272854808707], [49.84184755, 24.033404965918546], [49.84304055, 24.03454480829924], [49.84289855, 24.03567831761407], [49.8412623, 24.035276132972733], [49.8396341, 24.03707082750715], [49.843126, 24.027942448896574], [49.8425792, 24.029531841713514], [49.8413948, 24.030729371654616], [49.8412541, 24.021387417418772], [49.8245085, 23.939493302852853], [49.8397377, 23.994340389962883]],
+                {"bubblingMouseEvents": true, "color": "#2a78d6", "dashArray": "8", "dashOffset": null, "fill": false, "fillColor": "#2a78d6", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_623ba352a4b9ecc3e8a0c740c13e2e47);
+        
+    
+            poly_line_c6c4deef8a5078457ea7bc33769293d7.bindTooltip(
+                `<div>
+                     ГА: найкращий із 10 — 49.17 км
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var feature_group_5fa0dd8a0cd1ae0bb9f126e6e7492f7a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_2e23f03db4b532e862b02de7cdcbf031 = L.polyline(
+                [[49.8397377, 23.994340389962883], [49.835919950000005, 24.021908396727962], [49.837153, 24.025350046933703], [49.843126, 24.027942448896574], [49.8425792, 24.029531841713514], [49.8413948, 24.030729371654616], [49.84300705, 24.033800570347463], [49.84324135, 24.033772770986516], [49.84224785, 24.03457864110444], [49.842262500000004, 24.03272854808707], [49.84184755, 24.033404965918546], [49.84304055, 24.03454480829924], [49.84289855, 24.03567831761407], [49.8412623, 24.035276132972733], [49.8396341, 24.03707082750715], [49.838003900000004, 24.027711249999996], [49.83795295, 24.026929415935534], [49.8331532, 24.028292786034115], [49.8287834, 24.035125450000002], [49.82233395, 24.031679396967412], [49.8225208, 24.030954158705846], [49.78922915, 24.072384746360203], [49.84360890000001, 24.062971773801657], [49.843340749999996, 24.065755000000003], [49.84423155, 24.064371299999998], [49.843245499999995, 24.063349559601306], [49.84415465, 24.0680248], [49.84397225, 24.067497646563503], [49.8750745, 24.044984883042396], [49.8412541, 24.021387417418772], [49.8245085, 23.939493302852853], [49.8397377, 23.994340389962883]],
+                {"bubblingMouseEvents": true, "color": "#eb6834", "dashArray": "8", "dashOffset": null, "fill": false, "fillColor": "#eb6834", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_5fa0dd8a0cd1ae0bb9f126e6e7492f7a);
+        
+    
+            poly_line_2e23f03db4b532e862b02de7cdcbf031.bindTooltip(
+                `<div>
+                     мурахи: найкращий із 10 — 49.50 км
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var feature_group_c5f07d140aa38a8fa00819dc05e58b69 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_1669b750d6ebf38983b19a5f27b99e11 = L.polyline(
+                [[49.8397377, 23.994340389962883], [49.835919950000005, 24.021908396727962], [49.837153, 24.025350046933703], [49.838003900000004, 24.027711249999996], [49.83795295, 24.026929415935534], [49.8331532, 24.028292786034115], [49.8287834, 24.035125450000002], [49.8225208, 24.030954158705846], [49.82233395, 24.031679396967412], [49.78922915, 24.072384746360203], [49.84360890000001, 24.062971773801657], [49.843245499999995, 24.063349559601306], [49.843340749999996, 24.065755000000003], [49.84423155, 24.064371299999998], [49.84415465, 24.0680248], [49.84397225, 24.067497646563503], [49.8750745, 24.044984883042396], [49.84324135, 24.033772770986516], [49.84300705, 24.033800570347463], [49.84224785, 24.03457864110444], [49.842262500000004, 24.03272854808707], [49.84184755, 24.033404965918546], [49.84304055, 24.03454480829924], [49.84289855, 24.03567831761407], [49.8412623, 24.035276132972733], [49.8396341, 24.03707082750715], [49.843126, 24.027942448896574], [49.8425792, 24.029531841713514], [49.8413948, 24.030729371654616], [49.8412541, 24.021387417418772], [49.8245085, 23.939493302852853], [49.8397377, 23.994340389962883]],
+                {"bubblingMouseEvents": true, "color": "#c62828", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c62828", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_c5f07d140aa38a8fa00819dc05e58b69);
+        
+    
+            poly_line_1669b750d6ebf38983b19a5f27b99e11.bindTooltip(
+                `<div>
+                     найкращий: ГА + 2-opt — 49.17 км
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_c5f07d140aa38a8fa00819dc05e58b69.addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var marker_3cfdffa7f50d416276e80414091ccadd = L.marker(
+                [49.835919950000005, 24.021908396727962],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_65a30f2b68ff904c1187d87a63ac87cd = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e1\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_3cfdffa7f50d416276e80414091ccadd.bindTooltip(
+                `<div>
+                     1. Палац Сапігів (у ЛР5 — 1-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3cfdffa7f50d416276e80414091ccadd.setIcon(div_icon_65a30f2b68ff904c1187d87a63ac87cd);
+            
+    
+            var marker_1d9b93ed1c32494f75f87bf98546deb8 = L.marker(
+                [49.837153, 24.025350046933703],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_522087cde10b643256fe32687768cc10 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e2\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_1d9b93ed1c32494f75f87bf98546deb8.bindTooltip(
+                `<div>
+                     2. Львівська національна галерея мистецтв (у ЛР5 — 2-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d9b93ed1c32494f75f87bf98546deb8.setIcon(div_icon_522087cde10b643256fe32687768cc10);
+            
+    
+            var marker_a6cc1ffb85a3c26cb8d861eca071ed8a = L.marker(
+                [49.838003900000004, 24.027711249999996],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_b6c7df45e12ffb20a853dd220f2d7c32 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e3\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_a6cc1ffb85a3c26cb8d861eca071ed8a.bindTooltip(
+                `<div>
+                     3. Музей мистецтва давньої української книги (у ЛР5 — 3-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6cc1ffb85a3c26cb8d861eca071ed8a.setIcon(div_icon_b6c7df45e12ffb20a853dd220f2d7c32);
+            
+    
+            var marker_315ff6fee34efd0158340265ddc0ee68 = L.marker(
+                [49.83795295, 24.026929415935534],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_c1052c4408c431a4d142b41754e4bbe4 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e4\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_315ff6fee34efd0158340265ddc0ee68.bindTooltip(
+                `<div>
+                     4. Палац Потоцьких (у ЛР5 — 4-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_315ff6fee34efd0158340265ddc0ee68.setIcon(div_icon_c1052c4408c431a4d142b41754e4bbe4);
+            
+    
+            var marker_1e6e0ac5da84f57bcfab8b5f229e3713 = L.marker(
+                [49.8331532, 24.028292786034115],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_05959c7f0311a2198c1beb256ecd0c38 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e5\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_1e6e0ac5da84f57bcfab8b5f229e3713.bindTooltip(
+                `<div>
+                     5. Національний музей (у ЛР5 — 9-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e6e0ac5da84f57bcfab8b5f229e3713.setIcon(div_icon_05959c7f0311a2198c1beb256ecd0c38);
+            
+    
+            var marker_34b6ba639a19286ee3bda3574a6a31dc = L.marker(
+                [49.8287834, 24.035125450000002],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_60dc85e2305356a6f9ba47c32c19408f = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e6\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_34b6ba639a19286ee3bda3574a6a31dc.bindTooltip(
+                `<div>
+                     6. Меморіальний музей С. Людкевича (у ЛР5 — 8-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34b6ba639a19286ee3bda3574a6a31dc.setIcon(div_icon_60dc85e2305356a6f9ba47c32c19408f);
+            
+    
+            var marker_4850164728d32bc54251718feccd1a81 = L.marker(
+                [49.8225208, 24.030954158705846],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_8226fe831f96f484ac3c6cbb3c495522 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e7\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_4850164728d32bc54251718feccd1a81.bindTooltip(
+                `<div>
+                     7. Музей Михайла Грушевського (у ЛР5 — 5-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4850164728d32bc54251718feccd1a81.setIcon(div_icon_8226fe831f96f484ac3c6cbb3c495522);
+            
+    
+            var marker_a2cf957beb5d19374bb376062a682dca = L.marker(
+                [49.82233395, 24.031679396967412],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_9d1381379d653516a51374b548e44e11 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e8\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_a2cf957beb5d19374bb376062a682dca.bindTooltip(
+                `<div>
+                     8. Музей Івана Франка (у ЛР5 — 6-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2cf957beb5d19374bb376062a682dca.setIcon(div_icon_9d1381379d653516a51374b548e44e11);
+            
+    
+            var marker_3ba8670903ede83d4099933d1047d23e = L.marker(
+                [49.78922915, 24.072384746360203],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_2f98373621bd48d3e48a2648dfa10ed5 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e9\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_3ba8670903ede83d4099933d1047d23e.bindTooltip(
+                `<div>
+                     9. Храм Пресвятої Трійці (у ЛР5 — 7-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3ba8670903ede83d4099933d1047d23e.setIcon(div_icon_2f98373621bd48d3e48a2648dfa10ed5);
+            
+    
+            var marker_31747962e2065293e5d934d9d12d9b64 = L.marker(
+                [49.84360890000001, 24.062971773801657],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_e65058f46a0068c23c184a03126118fd = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e10\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_31747962e2065293e5d934d9d12d9b64.bindTooltip(
+                `<div>
+                     10. Хата, с. Орявчик, 1792 (у ЛР5 — 14-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_31747962e2065293e5d934d9d12d9b64.setIcon(div_icon_e65058f46a0068c23c184a03126118fd);
+            
+    
+            var marker_1f5bd16c8a9bd8e0422c7e37f9d64241 = L.marker(
+                [49.843245499999995, 24.063349559601306],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_22d892ae5e909aaef56d589fd38c32fd = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e11\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_1f5bd16c8a9bd8e0422c7e37f9d64241.bindTooltip(
+                `<div>
+                     11. Хата, с. Тухолька, 1910 (у ЛР5 — 11-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f5bd16c8a9bd8e0422c7e37f9d64241.setIcon(div_icon_22d892ae5e909aaef56d589fd38c32fd);
+            
+    
+            var marker_f4715f9512a365746bd39ee88ec96263 = L.marker(
+                [49.843340749999996, 24.065755000000003],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_4cf13c65eb36d00060a12341db64ff31 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e12\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_f4715f9512a365746bd39ee88ec96263.bindTooltip(
+                `<div>
+                     12. Каплиця, с. Ялинкувате, 60-70х рр. ХІХ ст. (у ЛР5 — 12-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4715f9512a365746bd39ee88ec96263.setIcon(div_icon_4cf13c65eb36d00060a12341db64ff31);
+            
+    
+            var marker_323bbc6ff5c3677648ca107abb1bd768 = L.marker(
+                [49.84423155, 24.064371299999998],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_11cdfdafad9e776553274e28c3b8086a = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e13\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_323bbc6ff5c3677648ca107abb1bd768.bindTooltip(
+                `<div>
+                     13. Хата, с. Либохора, 1749 (у ЛР5 — 13-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_323bbc6ff5c3677648ca107abb1bd768.setIcon(div_icon_11cdfdafad9e776553274e28c3b8086a);
+            
+    
+            var marker_c3f97293439e1f39b0c1926d08f0af3a = L.marker(
+                [49.84415465, 24.0680248],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_f310b5d067005365e9eee5f67a96acb3 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e14\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_c3f97293439e1f39b0c1926d08f0af3a.bindTooltip(
+                `<div>
+                     14. Хата, с. Шандровець, 1909 (у ЛР5 — 15-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3f97293439e1f39b0c1926d08f0af3a.setIcon(div_icon_f310b5d067005365e9eee5f67a96acb3);
+            
+    
+            var marker_9c155f081d99dc5afae6159cdce3350b = L.marker(
+                [49.84397225, 24.067497646563503],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_3c5d63b4e3a454f80bd161242bc5b652 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e15\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_9c155f081d99dc5afae6159cdce3350b.bindTooltip(
+                `<div>
+                     15. Хата, с. Мшанець, 1920 (у ЛР5 — 16-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c155f081d99dc5afae6159cdce3350b.setIcon(div_icon_3c5d63b4e3a454f80bd161242bc5b652);
+            
+    
+            var marker_93a939252c64eb91d7ba1cd95c92ad61 = L.marker(
+                [49.8750745, 24.044984883042396],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_f70c3cb564fa308dd1a9322570314174 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e16\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_93a939252c64eb91d7ba1cd95c92ad61.bindTooltip(
+                `<div>
+                     16. Палац Никоровичів (у ЛР5 — 17-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93a939252c64eb91d7ba1cd95c92ad61.setIcon(div_icon_f70c3cb564fa308dd1a9322570314174);
+            
+    
+            var marker_382404f56b5967fcf4f3dc443d5ac309 = L.marker(
+                [49.84324135, 24.033772770986516],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_1d9b3d2514bac0cd3fa4f5ca29792784 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e17\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_382404f56b5967fcf4f3dc443d5ac309.bindTooltip(
+                `<div>
+                     17. Львівський музей історії релігії (у ЛР5 — 19-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_382404f56b5967fcf4f3dc443d5ac309.setIcon(div_icon_1d9b3d2514bac0cd3fa4f5ca29792784);
+            
+    
+            var marker_08ea1185e44d69e1fc359b5ce1337bd2 = L.marker(
+                [49.84300705, 24.033800570347463],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_ef9bf4ec079ed3eede635c0323ba2bd3 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e18\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_08ea1185e44d69e1fc359b5ce1337bd2.bindTooltip(
+                `<div>
+                     18. Музей Історії та Релігії (у ЛР5 — 18-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08ea1185e44d69e1fc359b5ce1337bd2.setIcon(div_icon_ef9bf4ec079ed3eede635c0323ba2bd3);
+            
+    
+            var marker_9169745eb495a2bbf7cc600e5bf13bb2 = L.marker(
+                [49.84224785, 24.03457864110444],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_da7147b790d1401391b1780ff325129f = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e19\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_9169745eb495a2bbf7cc600e5bf13bb2.bindTooltip(
+                `<div>
+                     19. Вежа Корнякта (у ЛР5 — 21-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9169745eb495a2bbf7cc600e5bf13bb2.setIcon(div_icon_da7147b790d1401391b1780ff325129f);
+            
+    
+            var marker_2e7661ad817a1085a3e90cf6f560e4ca = L.marker(
+                [49.842262500000004, 24.03272854808707],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_819f82ddf978929f98b01568dfde18c7 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e20\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_2e7661ad817a1085a3e90cf6f560e4ca.bindTooltip(
+                `<div>
+                     20. Кам'яниця Корнякта (у ЛР5 — 20-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2e7661ad817a1085a3e90cf6f560e4ca.setIcon(div_icon_819f82ddf978929f98b01568dfde18c7);
+            
+    
+            var marker_a14fc799324c27e19282c74929008f11 = L.marker(
+                [49.84184755, 24.033404965918546],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_4ef3adaa56eb828feda1177cfe612cd1 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e21\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_a14fc799324c27e19282c74929008f11.bindTooltip(
+                `<div>
+                     21. Палац Любомирських (у ЛР5 — 22-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a14fc799324c27e19282c74929008f11.setIcon(div_icon_4ef3adaa56eb828feda1177cfe612cd1);
+            
+    
+            var marker_c239eaf9066c1191b9beb86ff7913aed = L.marker(
+                [49.84304055, 24.03454480829924],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_11b972c1fa9c67bda4e99c22109b7dec = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e22\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_c239eaf9066c1191b9beb86ff7913aed.bindTooltip(
+                `<div>
+                     22. Королівський арсенал (у ЛР5 — 24-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c239eaf9066c1191b9beb86ff7913aed.setIcon(div_icon_11b972c1fa9c67bda4e99c22109b7dec);
+            
+    
+            var marker_a3d991cb2fad46e2ebdf70341f01b922 = L.marker(
+                [49.84289855, 24.03567831761407],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_96a077cf88a0080be6b5c7bd60c97070 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e23\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_a3d991cb2fad46e2ebdf70341f01b922.bindTooltip(
+                `<div>
+                     23. Порохова Вежа (у ЛР5 — 23-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3d991cb2fad46e2ebdf70341f01b922.setIcon(div_icon_96a077cf88a0080be6b5c7bd60c97070);
+            
+    
+            var marker_50d6bb85aa805fb3c28494acff453910 = L.marker(
+                [49.8412623, 24.035276132972733],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_0e8f8928dbc674e6b3e955596b7d91c0 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e24\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_50d6bb85aa805fb3c28494acff453910.bindTooltip(
+                `<div>
+                     24. Арсенал, Львівський державний історичний музей старовинної зброї (у ЛР5 — 25-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_50d6bb85aa805fb3c28494acff453910.setIcon(div_icon_0e8f8928dbc674e6b3e955596b7d91c0);
+            
+    
+            var marker_32cc755b1c9421d222ac2ad3145ea0b8 = L.marker(
+                [49.8396341, 24.03707082750715],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_a0ca31bff46a8effe194d4ba5aa69624 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e25\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_32cc755b1c9421d222ac2ad3145ea0b8.bindTooltip(
+                `<div>
+                     25. Музей сакральної барокової скульптури Пінзеля (у ЛР5 — 10-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_32cc755b1c9421d222ac2ad3145ea0b8.setIcon(div_icon_a0ca31bff46a8effe194d4ba5aa69624);
+            
+    
+            var marker_1982ef842d8ec6095d44d788f6a02f70 = L.marker(
+                [49.843126, 24.027942448896574],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_9664cedb5f2834ba43c36cd27ec43c8f = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e26\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_1982ef842d8ec6095d44d788f6a02f70.bindTooltip(
+                `<div>
+                     26. Національний музей у Львові (у ЛР5 — 26-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1982ef842d8ec6095d44d788f6a02f70.setIcon(div_icon_9664cedb5f2834ba43c36cd27ec43c8f);
+            
+    
+            var marker_249b4f831e46c4fa2966fe91d9583b61 = L.marker(
+                [49.8425792, 24.029531841713514],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_ec443531e6e02b932148b6738504260d = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e27\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_249b4f831e46c4fa2966fe91d9583b61.bindTooltip(
+                `<div>
+                     27. Львівський Державний Природознавчий Музей (у ЛР5 — 27-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_249b4f831e46c4fa2966fe91d9583b61.setIcon(div_icon_ec443531e6e02b932148b6738504260d);
+            
+    
+            var marker_d553d80494f0b0439e0d5df0a9d67181 = L.marker(
+                [49.8413948, 24.030729371654616],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_fe085ecde1315dd16e1d1448bdfa250d = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e28\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_d553d80494f0b0439e0d5df0a9d67181.bindTooltip(
+                `<div>
+                     28. Львівський історичний музей (у ЛР5 — 28-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d553d80494f0b0439e0d5df0a9d67181.setIcon(div_icon_fe085ecde1315dd16e1d1448bdfa250d);
+            
+    
+            var marker_502aa7f90aaebffb37a396fe09838172 = L.marker(
+                [49.8412541, 24.021387417418772],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_917f07ce10cd3763b5df56cc48e04f73 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e29\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_502aa7f90aaebffb37a396fe09838172.bindTooltip(
+                `<div>
+                     29. Будинок вчених (у ЛР5 — 29-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_502aa7f90aaebffb37a396fe09838172.setIcon(div_icon_917f07ce10cd3763b5df56cc48e04f73);
+            
+    
+            var marker_f1520b40e261956b1ec7a604c7325042 = L.marker(
+                [49.8245085, 23.939493302852853],
+                {
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_b4f46b6790ff9883dad5422b6c74a694 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#fff;border:2px solid #c62828;border-radius:50%;width:22px;height:22px;line-height:18px;text-align:center;font:bold 11px sans-serif;color:#c62828\"\u003e30\u003c/div\u003e",
+  "iconSize": [22, 22],
+  "iconAnchor": [11, 11],
+  "className": "empty",
+});
+        
+    
+            marker_f1520b40e261956b1ec7a604c7325042.bindTooltip(
+                `<div>
+                     30. Каплиця всіх Святих українського народу (у ЛР5 — 30-а)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1520b40e261956b1ec7a604c7325042.setIcon(div_icon_b4f46b6790ff9883dad5422b6c74a694);
+            
+    
+            var marker_7c87fdaec84f1ea7f13baa6e7ee311fd = L.marker(
+                [49.8397377, 23.994340389962883],
+                {
+  "zIndexOffset": 1000,
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+        
+    
+            var div_icon_e6f87e774c9ccc78e7d86a661b537aba = L.divIcon({
+  "html": "\u003cdiv style=\"background:#1b7f3a;border:2px solid #fff;border-radius:4px;width:26px;height:26px;line-height:24px;text-align:center;font:bold 14px sans-serif;color:#fff\"\u003eS\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+            marker_7c87fdaec84f1ea7f13baa6e7ee311fd.bindTooltip(
+                `<div>
+                     старт і фініш: СТАРТ: Головний вокзал
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7c87fdaec84f1ea7f13baa6e7ee311fd.setIcon(div_icon_e6f87e774c9ccc78e7d86a661b537aba);
+            
+    
+            var layer_control_177653a75a92da932ae0faef919882fe_layers = {
+                base_layers : {
+                },
+                overlays :  {
+                    "\u041b\u04205: 2-opt \u2014 51.74 \u043a\u043c" : feature_group_6e05a6f70889cc09804a3c6f9daade06,
+                    "\u0413\u0410: \u043d\u0430\u0439\u043a\u0440\u0430\u0449\u0438\u0439 \u0456\u0437 10 \u2014 49.17 \u043a\u043c" : feature_group_623ba352a4b9ecc3e8a0c740c13e2e47,
+                    "\u043c\u0443\u0440\u0430\u0445\u0438: \u043d\u0430\u0439\u043a\u0440\u0430\u0449\u0438\u0439 \u0456\u0437 10 \u2014 49.50 \u043a\u043c" : feature_group_5fa0dd8a0cd1ae0bb9f126e6e7492f7a,
+                    "\u043d\u0430\u0439\u043a\u0440\u0430\u0449\u0438\u0439: \u0413\u0410 + 2-opt \u2014 49.17 \u043a\u043c" : feature_group_c5f07d140aa38a8fa00819dc05e58b69,
+                },
+            };
+            let layer_control_177653a75a92da932ae0faef919882fe = L.control.layers(
+                layer_control_177653a75a92da932ae0faef919882fe_layers.base_layers,
+                layer_control_177653a75a92da932ae0faef919882fe_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_a30919659ae08605f7e79b55a23f0e2a);
+
+        
+    
+            map_a30919659ae08605f7e79b55a23f0e2a.fitBounds(
+                [[49.78922915, 23.939493302852853], [49.8750745, 24.072384746360203]],
+                {}
+            );
+        
+</script>
+</html>
